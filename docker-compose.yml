@@ -21,7 +21,6 @@ services:
       - POSTGRES_USER=jira
       - POSTGRES_PASSWORD=JiraRush
       - POSTGRES_DB=jira
-
   nginx:
     container_name: nginx
     image: nginx:latest
