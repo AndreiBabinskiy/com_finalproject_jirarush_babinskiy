@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>JiraRush - confirmación por correo electrónico</title>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+</head>
+<body>
+<p th:text="'Привет, ' + ${user.firstName} + '.'"/>
+<p>Para completar la configuración de su cuenta y comenzar a usar JiraRush, confirme que ha ingresado el nombre de su cuenta correctamente.
+    correo electrónico.</p>
+<a th:href="${confirmationUrl}">Confirmar correo electrónico</a>
+</body>
+</html>
