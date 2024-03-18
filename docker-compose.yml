@@ -16,7 +16,8 @@ services:
       - DATASOURCE_PASSWORD=JiraRush
     networks:
       - backend
-
+    env_file:
+      - secret-data.env
   db:
     container_name: jira-db
     image: postgres:14.7-alpine
@@ -28,10 +29,12 @@ services:
       - POSTGRES_DB=jira
     networks:
       - backend
+    env_file:
+      - secret-data.env
 
   nginx:
     container_name: nginx
-    image: nginx
+    image: nginx:latest
     ports:
       - "80:80"
     volumes:
