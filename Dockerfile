@@ -1,8 +1,14 @@
-FROM openjdk:17-buster
+FROM  openjdk:17-buster
 ARG JAR_FILE=target/*.jar
 COPY resources ./resources
 COPY ${JAR_FILE} jira-1.0.jar
-ENTRYPOINT ["java","-jar","/jira-1.0.jar"]
+ENTRYPOINT ["java","-jar","/jira-1.0.jar", "--spring.profiles.active=prod"]
+
+#FROM openjdk:17-buster
+#ARG JAR_FILE=target/*.jar
+#COPY resources ./resources
+#COPY ${JAR_FILE} jira-1.0.jar
+#ENTRYPOINT ["java","-jar","/jira-1.0.jar"]
 
 #FROM maven:3.9-eclipse-temurin-17
 #WORKDIR /app
